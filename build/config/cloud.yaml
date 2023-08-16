@@ -1,0 +1,23 @@
+mysql:
+  path: "10.10.102.96:3306"
+  config: "charset=utf8mb4&parseTime=True&loc=Local"
+  db_name: "program_dev"
+  username: "root"
+  password: "Joohwan"
+  max_idle_conns: 10
+  max_open_conns: 100
+k8s:
+  #  namespace: uavedge 项目在 k8s 中默认的 namespace
+  namespace: "program"
+  #  uri: 打标签的域名
+  uri: "program.task"
+  image_pull_secret: "harbor"
+app:
+  debug: true
+  # 一定是 443 端口，因为 daemon 是使用 https 进行访问的
+  # golang api 将请求提交给 daemon 进行操作
+  edge_image: "10.10.102.66:443/uavedge/edge:2.1"
+  stress_image: "10.10.102.66:443/uavedge/busybox:1.34"
+  # port: agent-cloud 服务的端口
+  port: 8002
+
