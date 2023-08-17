@@ -1,7 +1,7 @@
 package docker
 
 import (
-	"base_k8s/edge/cmd/agent/config"
+	"base_k8s/edge/cmd/agent/app/config"
 	"base_k8s/edge/pkg/utils"
 	"context"
 	"encoding/base64"
@@ -23,7 +23,7 @@ import (
 
 var (
 	DockerUserName     = "piwriw"
-	DockerUserPassword = "Piwriw503420."
+	DockerUserPassword = "Joohwan."
 )
 
 type ClientDocker struct {
